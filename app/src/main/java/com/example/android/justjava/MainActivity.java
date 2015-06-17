@@ -13,6 +13,7 @@ import java.text.NumberFormat;
 public class MainActivity extends ActionBarActivity {
 
     int quantity = 0;
+    final int price = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +21,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
     public void increment(View view){
-        if(quantity == 0){
-            quantity = 0;
-        }else{
             quantity++;
             display(quantity);
-        }
+
     }
     public void decrement(View view){
         if(quantity == 0){
@@ -37,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void submitOrder(View view){
         display(quantity);
-        displayPrice(quantity * 5);
+        displayPrice(quantity * price);
     }
     private void display(int number){
         TextView quantity_view = (TextView) findViewById(R.id.quantity_text_view);

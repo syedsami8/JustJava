@@ -7,6 +7,6 @@
     <string name="subtract">-</string>
     <string name="order">order</string>
     <string name="price">$0</string>
-    <string name="price_text">price</string>
+    <string name="price_text">PRICE (1 unit = $ 5)</string>
     <string name="action_settings">Settings</string>
 </resources>
