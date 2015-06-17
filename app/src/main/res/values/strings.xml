@@ -2,5 +2,11 @@
     <string name="app_name">Just Java</string>
 
     <string name="quantity_text">Quantity</string>
+    <string name="quantity">0</string>
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="order">order</string>
+    <string name="price">$0</string>
+    <string name="price_text">price</string>
     <string name="action_settings">Settings</string>
 </resources>
