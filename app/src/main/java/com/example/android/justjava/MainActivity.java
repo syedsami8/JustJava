@@ -4,35 +4,47 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import java.text.NumberFormat;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void increment(View view){
+        if(quantity == 0){
+            quantity = 0;
+        }else{
+            quantity++;
+            display(quantity);
         }
-
-        return super.onOptionsItemSelected(item);
+    }
+    public void decrement(View view){
+        if(quantity == 0){
+            quantity = 0;
+        }else{
+            quantity--;
+            display(quantity);
+        }
+    }
+    public void submitOrder(View view){
+        display(quantity);
+        displayPrice(quantity * 5);
+    }
+    private void display(int number){
+        TextView quantity_view = (TextView) findViewById(R.id.quantity_text_view);
+        quantity_view.setText("" + number);
+    }
+    private void displayPrice(int number){
+        TextView price_view = (TextView) findViewById(R.id.price_text_view);
+        price_view.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 }
